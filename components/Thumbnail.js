@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image";
 import {ThumbUpIcon} from "@heroicons/react/outline";
 import { forwardRef } from "react";
 
@@ -15,8 +15,7 @@ const Thumbnail = forwardRef(({result}, ref) => {
             <Image
                 layout='responsive'
                 src={
-                    `${BASE_URL}${result.backdrop_path || result.poster_path}` || 
-                    `${BASE_URL}${result.backdrop_path}`
+                    `${BASE_URL}${result.backdrop_path || result.poster_path}` || `${BASE_URL}${result.backdrop_path}`
                 }
 
                 height={1080}
@@ -39,6 +38,8 @@ const Thumbnail = forwardRef(({result}, ref) => {
             </div>
         </div>
     )
-})
+});
+
+Thumbnail.displayName = 'Thumbnail';
 
 export default Thumbnail
